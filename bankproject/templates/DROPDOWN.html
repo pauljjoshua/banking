@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dependent Dropdown</title>
+</head>
+<body>
+{% csrf_token %}
+<div class="col-md-6">
+  <div class="form-group">
+    <label for="inputStatus">Subject</label>
+    <select id="question-subject" class="form-control-sm custom-select">
+      <option selected disabled>Choose a subject</option>
+      {% for subject in subjects%}
+      <option value="{{subject.id}}">{{subject.title}}</option>
+      {% endfor %}
+    </select>
+  </div>
+</div>
+<div class="col-md-6">
+  <div class="form-group">
+    <label for="inputStatus">Topic</label>
+    <select id="question-topic" class="form-control-sm custom-select" name="topic">
+      <option selected disabled>Choose a topic</option>
+    </select>
+  </div>
+</div>
+
+</body>
+</html>

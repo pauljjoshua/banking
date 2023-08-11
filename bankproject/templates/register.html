@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>REGISTRATION PAGE</title>
+<style>
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 500px;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  padding: 20px;
+}
+
+.container h1 {
+  text-align: center;
+}
+
+.container input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+.container button {
+  background-color: #000;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+</style>
+</head>
+<body>
+<div class="container">
+    <h1>Register</h1>
+    <form action="register" method="post">
+     {% csrf_token %}
+
+    <input type="text" name="username" placeholder="Enter your username"><br>
+    <input type="text" name="first_name" placeholder="Enter your firstname"><br>
+    <input type="text" name="last_name" placeholder="Enter your lastname"><br>
+    <input type="email" name="email" placeholder="Enter your email address"><br>
+    <input type="password" name="password" placeholder="Enter your password"><br>
+    <input type="password" name="password1" placeholder="confirm password"><br>
+    <input type="submit" ><br>
+    </form>
+  </div>
+{% for msg in messages %}
+<h5 align="center" style="color:red">{{msg}}</h5>
+{% endfor %}
+</body>
+</html>
